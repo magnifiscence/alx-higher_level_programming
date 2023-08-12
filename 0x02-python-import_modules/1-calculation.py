@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 
-import calculator_1
+from calculator_1 import add,  sub, mul, div
 
 if __name__ == '__main__':
     a = 10
     b = 5
 
     result1 = calculator_1.add(a, b)
-    result2 = calculator_1.subtract(a, b)
-    result3 = calculator_1.multiply(a, b)
-    result4 = calculator_1.divide(a,b)
+    result2 = calculator_1.sub(a, b)
+    result3 = calculator_1.mul(a, b)
+    result4 = calculator_1.div(a, b)
 
     print(f"the sum of {a} and {b} is: {result1}")
     print(f"the difference between {a} and {b} is: {result2}")
