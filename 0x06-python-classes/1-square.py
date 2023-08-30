@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """
+Module 1-square
 Defines a class Square with size as a private attribute
 """
 
