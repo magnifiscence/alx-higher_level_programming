@@ -12,15 +12,15 @@ class Square:
     size: size of a side in square
     """
     def __init__(self, size=0):
-        self._size = size
-        try
-        size == int
-        except
-        raise TypeError:
-            print("size must be an integer")
+        """
+        Initializes square
 
-            try
-            size >= 0
-            except
-            raise ValueError:
-                print("size must be >= 0")
+        Attributes:
+        __size (int): size of a side of square, defaults to 0 if none
+        """
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = size
