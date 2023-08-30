@@ -9,7 +9,7 @@ class Square:
     class Square definition
 
     Args:
-    size : size of side of a square
+    size: size of side of a square
     """
     def __init__(self, size):
         """
