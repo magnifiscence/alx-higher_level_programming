@@ -4,15 +4,28 @@ import MySQLdb
 from sys import argv
 
 
+def dbConnect():
+    """Filtered states selection function"""
+    link = MySQLdb.connect(
+            user=sys.argv[1],
+            password=sys.argv[2],
+            database=sys.argv[3],
+            host="localhost",
+            port=3306
+        )
+        search = '%N'
+        exe = link.cursor()
+        exe.execute(
+                "SELECT * FROM states WHERE name LIKE %s ORDER BY id",
+                (search,)
+        )
+        link.commit()
+        result = exe.fetchall()
+        for res in result:
+            print(res)
+        exe.close()
+        link.close()
+
+
 if __name__ == "__main__":
-    """ Lists all states with a name starting with N (upper N) """
-    my_db = MySQLdb.connect(host="localhost", port=3306,
-                            user=argv[1], password=argv[2], db=argv[3])
-    cur = my_db.cursor()
-    cur.execute("""SELECT * FROM states WHERE name LIKE BINARY 'N%' \
-    ORDER BY id ASC""")
-    rows = cur.fetchall()
-    for i in rows:
-        print(i)
-    cur.close()
-    my_db.close()
+    dbConnect()
