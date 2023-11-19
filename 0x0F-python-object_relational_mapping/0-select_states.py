@@ -2,7 +2,7 @@
 """ Script that lists all states from the database hbtn_0e_0_usa """
 import MySQLdb
 from sys import argv
-hbtn_0e_0_usa = my_db
+db = hbtn_0e_0_usa
 
 
 if __name__ == "__main__":
